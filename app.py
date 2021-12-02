@@ -6,10 +6,13 @@ app.debug = True
 
 model = keras.models.load_model('model.h5')
 
-
 @app.route('/')
 def hello_world():  # put application's code here
     return render_template('index.html')
+
+@app.route('/login')
+def login_page():
+    return render_template('login.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
