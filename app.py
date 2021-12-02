@@ -14,6 +14,10 @@ def hello_world():  # put application's code here
 def login_page():
     return render_template('login.html')
 
+@app.route('/register')
+def register_page():
+    return render_template('register.html')
+
 @app.route('/predict', methods=['POST'])
 def predict():
     features = [float(x) for x in request.form.values()]
